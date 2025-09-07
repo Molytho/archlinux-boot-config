@@ -4,7 +4,7 @@ pkgname=(
     boot-config-sd-boot
     boot-config-efi
 )
-pkgver=0.1.2
+pkgver=0.1.3
 pkgrel=1
 pkgdesc="EFI uki boot setup"
 arch=(x86_64)
@@ -19,6 +19,7 @@ source=(
     90-shim-install.hook
     kernel-install.sh
     sd-boot-install.sh
+    90-uki-copy.install
     install.conf
     uki.conf
     boot-config.install
@@ -32,6 +33,7 @@ sha256sums=('3ba376c10e04cc0e3665a7f70e0a4c78b83eda0a0d99c05bf932e39ab999d8c1'
             'e21574eef4042dc2d81a349e53ea2b79e28a358bf21a46399b3932ecfab74a23'
             '597ef468a2d01da5b9f66877eb3f5b08c66e97c8ef7fec4f7a4e9d3f778eb6a2'
             '778fe50122be109105f8a90fddf48b4e47891251a239c0c2846e6b37d7a56ce0'
+            '048715f75eb13445854664c1eaf623a29278f09812c056af1eb1416cfb04df90'
             '1acebe38cd460afdbc8fcc3acf38a2ece34513ea81213ed191250b890b12c6b2'
             'dd8d010b5d09400f33464d7fccd672fd13c7327cf3904c56151f324f181d2674'
             '8d5be63f80fffb6b5ded2dbee25695d202ce1a622a96732bb51e7274a37f8239'
@@ -78,4 +80,10 @@ package_boot-config-sd-boot() {
 
 package_boot-config-efi() {
     depends=(boot-config-common)
+
+    cd "${srcdir}"
+
+    install -d "${pkgdir}/etc/kernel/install.d/"
+    install -m 755 -t "${pkgdir}/etc/kernel/install.d/" \
+        90-uki-copy.install
 }
