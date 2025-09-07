@@ -4,7 +4,7 @@ pkgname=(
     boot-config-sd-boot
     boot-config-efi
 )
-pkgver=0.1.3
+pkgver=0.1.4
 pkgrel=1
 pkgdesc="EFI uki boot setup"
 arch=(x86_64)
@@ -35,7 +35,7 @@ sha256sums=('3ba376c10e04cc0e3665a7f70e0a4c78b83eda0a0d99c05bf932e39ab999d8c1'
             '778fe50122be109105f8a90fddf48b4e47891251a239c0c2846e6b37d7a56ce0'
             '048715f75eb13445854664c1eaf623a29278f09812c056af1eb1416cfb04df90'
             '1acebe38cd460afdbc8fcc3acf38a2ece34513ea81213ed191250b890b12c6b2'
-            'dd8d010b5d09400f33464d7fccd672fd13c7327cf3904c56151f324f181d2674'
+            'eaf2738a2c162500635b07024b0cf3a532377fcfa13dc198a30f3754a9e2bd1e'
             '8d5be63f80fffb6b5ded2dbee25695d202ce1a622a96732bb51e7274a37f8239'
             '8591a0157eb281772e14783b77285e6802741e0893a9e5b8ad86392655e157d8')
 
@@ -64,6 +64,7 @@ package_boot-config-common() {
 
 package_boot-config-sd-boot() {
     depends=(boot-config-common shim-signed efibootmgr mokutil)
+    conflicts=(boot-config-efi)
     install=boot-config-sd-boot.install
 
     cd "${srcdir}"
@@ -80,6 +81,7 @@ package_boot-config-sd-boot() {
 
 package_boot-config-efi() {
     depends=(boot-config-common)
+    conflicts=(boot-config-sd-boot)
 
     cd "${srcdir}"
 
