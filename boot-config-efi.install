@@ -1,0 +1,13 @@
+post_install() {
+	echo "Creating EFI boot entries..."
+    for i in /usr/lib/modules/*/vmlinuz; do
+        echo "$i" | /usr/lib/boot-config/efi-install install
+    done
+}
+
+pre_remove() {
+    echo "Removing EFI boot entries..."
+    for i in /usr/lib/modules/*/vmlinuz; do
+        echo "$i" | /usr/lib/boot-config/efi-install uninstall
+    done
+}

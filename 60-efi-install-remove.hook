@@ -1,0 +1,10 @@
+[Trigger]
+Type = Path
+Operation = Remove
+Target = usr/lib/modules/*/vmlinuz
+
+[Action]
+Description = Removing EFI boot entry...
+When = PreTransaction
+Exec = /usr/lib/boot-config/efi-install uninstall
+NeedsTargets
