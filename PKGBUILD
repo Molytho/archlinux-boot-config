@@ -4,7 +4,7 @@ pkgname=(
     boot-config-sd-boot
     boot-config-efi
 )
-pkgver=0.1.5
+pkgver=1.0
 pkgrel=1
 pkgdesc="EFI uki boot setup"
 arch=(x86_64)
@@ -88,7 +88,7 @@ package_boot-config-sd-boot() {
 }
 
 package_boot-config-efi() {
-    depends=(boot-config-common)
+    depends=(boot-config-common efibootmgr)
     conflicts=(boot-config-sd-boot)
     install=boot-config-efi.install
 
