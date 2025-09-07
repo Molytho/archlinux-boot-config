@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Remove
+Target = shim-signed
+Target = boot-config-sd-boot
+
+[Action]
+Description = Removing shim...
+When = PreTransaction
+Exec = /usr/bin/rm -f /efi/EFI/arch/shimx64.efi /efi/EFI/arch/mmx64.efi

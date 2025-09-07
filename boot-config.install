@@ -1,0 +1,9 @@
+post_install() {
+	echo "Generating ukify secure boot key..."
+    /usr/bin/ukify genkey --config=/etc/kernel/uki.conf
+}
+
+post_remove() {
+	rm -f /etc/kernel/mok.key
+    rm -f /etc/kernel/mok.crt
+}

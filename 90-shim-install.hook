@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = shim-signed
+
+[Action]
+Description = Updating shim...
+When = PostTransaction
+Exec = /usr/bin/cp /usr/share/shim-signed/shimx64.efi /usr/share/shim-signed/mmx64.efi /efi/EFI/arch/

@@ -1,0 +1,10 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/systemd/boot/efi/systemd-bootx64.efi
+
+[Action]
+Description = Updating systemd-boot...
+When = PostTransaction
+Exec = /usr/bin/sbsign --key /etc/kernel/mok.key --cert /etc/kernel/mok.crt --output /efi/EFI/arch/grubx64.efi /usr/lib/systemd/boot/efi/systemd-bootx64.efi

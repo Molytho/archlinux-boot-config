@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Remove
+Target = systemd
+Target = boot-config-sd-boot
+
+[Action]
+Description = Removing systemd-boot...
+When = PreTransaction
+Exec = /usr/bin/rm -f /efi/EFI/arch/grubx64.efi
