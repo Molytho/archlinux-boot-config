@@ -4,7 +4,7 @@ pkgname=(
     boot-config-sd-boot
     boot-config-efi
 )
-pkgver=0.1.1
+pkgver=0.1.2
 pkgrel=1
 pkgdesc="EFI uki boot setup"
 arch=(x86_64)
@@ -31,14 +31,14 @@ sha256sums=('3ba376c10e04cc0e3665a7f70e0a4c78b83eda0a0d99c05bf932e39ab999d8c1'
             'd8bc81d7590e3894c3727aee25f061838e1ecfb5c97519e106f808688bd1c2f3'
             'e21574eef4042dc2d81a349e53ea2b79e28a358bf21a46399b3932ecfab74a23'
             '597ef468a2d01da5b9f66877eb3f5b08c66e97c8ef7fec4f7a4e9d3f778eb6a2'
-            '2b75fece61d71f4908af13d8815b15f75f87463b4d582d19fc4c69b2b13e4b50'
+            '778fe50122be109105f8a90fddf48b4e47891251a239c0c2846e6b37d7a56ce0'
             '1acebe38cd460afdbc8fcc3acf38a2ece34513ea81213ed191250b890b12c6b2'
             'dd8d010b5d09400f33464d7fccd672fd13c7327cf3904c56151f324f181d2674'
-            '4bb34fdaa3c2b264eda1ba23beee1b5f8ccf1ae3e70e89062b7c3babae5f900a'
+            '8d5be63f80fffb6b5ded2dbee25695d202ce1a622a96732bb51e7274a37f8239'
             '8591a0157eb281772e14783b77285e6802741e0893a9e5b8ad86392655e157d8')
 
 package_boot-config-common() {
-    depends=(systemd systemd-ukify mkinitcpio sbsigntools)
+    depends=(systemd systemd-ukify mkinitcpio sbsigntools openssl)
     backup=(etc/kernel/cmdline)
     install=boot-config.install
 
@@ -61,7 +61,7 @@ package_boot-config-common() {
 }
 
 package_boot-config-sd-boot() {
-    depends=(boot-config-common shim-signed efibootmgr)
+    depends=(boot-config-common shim-signed efibootmgr mokutil)
     install=boot-config-sd-boot.install
 
     cd "${srcdir}"

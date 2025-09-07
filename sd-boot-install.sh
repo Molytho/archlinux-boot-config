@@ -56,6 +56,10 @@ install-all() {
     install_shim
     install_sd_boot
     create_boot_entry
+
+    echo "*************************************************************************"
+    echo "  Now enroll the MOK using '/usr/bin/mokutil -i \"/etc/kernel/mok.der\"'"
+    echo "*************************************************************************"
 }
 
 uninstall_shim() {

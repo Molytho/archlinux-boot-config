@@ -1,9 +1,10 @@
 post_install() {
 	echo "Generating ukify secure boot key..."
     /usr/bin/ukify genkey --config=/etc/kernel/uki.conf
+
+    openssl x509 -in /etc/kernel/mok.crt -outform der -out /etc/kernel/mok.der
 }
 
 post_remove() {
-	rm -f /etc/kernel/mok.key
-    rm -f /etc/kernel/mok.crt
+	rm -f /etc/kernel/mok.{key,crt,der}
 }
