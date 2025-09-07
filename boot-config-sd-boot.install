@@ -1,13 +1,6 @@
 post_install() {
-    echo "Creating efi directories"
-    mkdir -p /efi/EFI/arch/
-
-	echo "Installing shim..."
-    cp /usr/share/shim-signed/shimx64.efi /usr/share/shim-signed/mmx64.efi /efi/EFI/arch/
-
-    echo "Installing systemd-boot..."
-    sbsign --key /etc/kernel/mok.key --cert /etc/kernel/mok.crt --output /efi/EFI/arch/grubx64.efi /usr/lib/systemd/boot/efi/systemd-bootx64.efi
+    /usr/lib/boot-config/sd-boot-install install
 
     echo "Installing all kernels..."
-    echo all | /usr/share/libalpm/scripts/kernel-install add
+    echo all | /usr/lib/boot-config/kernel-install add
 }

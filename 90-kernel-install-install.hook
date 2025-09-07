@@ -27,5 +27,5 @@ Target = mkinitcpio-git
 [Action]
 Description = Installing kernel ukis using kernel-install...
 When = PostTransaction
-Exec = /usr/share/libalpm/scripts/kernel-install add
+Exec = /usr/lib/boot-config/kernel-install add
 NeedsTargets

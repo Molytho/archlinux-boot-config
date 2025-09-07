@@ -13,5 +13,5 @@ Target = boot-config-common
 [Action]
 Description = Removing kernel ukis using kernel-install...
 When = PreTransaction
-Exec = /usr/share/libalpm/scripts/kernel-install remove
+Exec = /usr/lib/boot-config/kernel-install remove
 NeedsTargets

@@ -7,4 +7,4 @@ Target = boot-config-sd-boot
 [Action]
 Description = Removing systemd-boot...
 When = PreTransaction
-Exec = /usr/bin/rm -f /efi/EFI/arch/grubx64.efi
+Exec = /usr/lib/boot-config/sd-boot-install uninstall-sd-boot

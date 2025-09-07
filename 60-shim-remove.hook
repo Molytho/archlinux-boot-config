@@ -7,4 +7,4 @@ Target = boot-config-sd-boot
 [Action]
 Description = Removing shim...
 When = PreTransaction
-Exec = /usr/bin/rm -f /efi/EFI/arch/shimx64.efi /efi/EFI/arch/mmx64.efi
+Exec = /usr/lib/boot-config/sd-boot-install uninstall-shim
