@@ -25,6 +25,13 @@ get_esp() {
 
 create_boot_entry() {
     local path="\\EFI\\ARCH\\$2"
+
+    # Skip if already exists
+    if [ -n "$(efibootmgr | grep -i "\\\\EFI\\\\ARCH\\\\$2" | awk '{print $1}')" ]; then
+        echo "Skipping boot entry for \"$1\": Already exists"
+        return;
+    fi
+
     echo "Creating boot entry: \"$1\" at \"$path\""
     efibootmgr -c \
         -d "$esp_dev" \

@@ -4,7 +4,7 @@ pkgname=(
     boot-config-sd-boot
     boot-config-efi
 )
-pkgver=1.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="EFI uki boot setup"
 arch=(x86_64)
@@ -36,10 +36,10 @@ sha256sums=('3ba376c10e04cc0e3665a7f70e0a4c78b83eda0a0d99c05bf932e39ab999d8c1'
             'd8bc81d7590e3894c3727aee25f061838e1ecfb5c97519e106f808688bd1c2f3'
             'e21574eef4042dc2d81a349e53ea2b79e28a358bf21a46399b3932ecfab74a23'
             'a57e6c288dc7c15c41d39d4738804b0d9d03e2a078e2fec291fe27f2f13432fc'
-            '9718494fb88cf5663f160b4de6d3c316b3c46a66b5b110e3c79c35dbcf994e29'
+            '6b8890be061f0b4898b7981b1a5d5d6afcb9bd5da9abed16bd09531b277b1bd4'
             '597ef468a2d01da5b9f66877eb3f5b08c66e97c8ef7fec4f7a4e9d3f778eb6a2'
             '778fe50122be109105f8a90fddf48b4e47891251a239c0c2846e6b37d7a56ce0'
-            '5d6b0dce5b56eb79a35384edf924b0028f604a6413143a318011103d45a88e40'
+            '0985bc293242670f24e192734509f9f19d7a9302f3a6f1de2ccb3dcbf781ad57'
             '3bada5f0ffa5f25504707bd80c49743fb67efc34ea497de0665b5971a45177f0'
             '1acebe38cd460afdbc8fcc3acf38a2ece34513ea81213ed191250b890b12c6b2'
             'eaf2738a2c162500635b07024b0cf3a532377fcfa13dc198a30f3754a9e2bd1e'

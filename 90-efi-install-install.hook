@@ -4,7 +4,7 @@ Operation = Install
 Target = usr/lib/modules/*/vmlinuz
 
 [Action]
-Description = Installing kernel ukis using kernel-install...
+Description = Installing EFI boot entry...
 When = PostTransaction
 Exec = /usr/lib/boot-config/efi-install install
 NeedsTargets
